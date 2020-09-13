@@ -24,12 +24,12 @@ C
 
 #FUNCIÓN QUE AGREGA EN CACHE#
 
-makeCacheMatrix <- function(x = matrix()) {
-  m <- NULL
+makeCacheMatrix <- function(x = matrix()) { #crea una función que guarda en caché una matriz
+  m <- NULL #inicializa un objeto vacío
   #print(x)
-  set <- function(y) {
-    x <<- y
-    m <<- NULL
+  set <- function(y) { #setea una instancia de la función matriz como set
+    x <<- y   ##Utiliza el operaror <<- y para guardar variable en caché
+    m <<- NULL ## lo mismo con objeto
   }
   get <- function() x
   seteo_inversa <- function(inversa) m <<- inversa
@@ -62,7 +62,7 @@ cacheSolve <- function(x, ...) {
   #diagonal <- diag(...,nrow(datos),ncol(datos))
   #diagonal
   #FUNCION SOLVE ENTREGA LA INVERSA DE UNA MATRIZ
-  m <- solve(datos)
+  m <- solve(datos) # función solve que invierte la matriz.
   x$seteo_inversa(m)
   m
 }
